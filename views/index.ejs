@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IndianRugs</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0/fonts/remixicon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./stylesheets/style.css" />
+</head>
+
+<body>
+ 
+    <div id="loader"></div>
+    <%- include('nav.ejs') -%>
+    <%- include('home.ejs') -%>
+   
+
+  <div id="container">   
+      <% for(var i = 0; i < carpets.length;i++){%>
+          <div id="1" onclick="javascript:window.location.href='/price/<%= carpets[i]._id %>'"class="box-c">
+
+          <div class="img-box">
+          <img src="/upload/<%= carpets[i].image1 %>" alt="" />
+          </div>
+          <h3><%= carpets[i].catagory %></h3>
+          <h5><%= carpets[i].title %></h5>
+          <h2>Rs - <%= carpets[i].price %></h2>
+        </div>
+      <% } %>
+
+      <% for(var i = 0; i < bags.length;i++){%>
+          <div id="1" onclick="javascript:window.location.href='/price/<%= bags[i]._id %>'"class="box-c">
+
+          <div class="img-box">
+          <img src="/upload/<%= bags[i].image1 %>" alt="" />
+          </div>
+          <h1><%= bags[i].catagory %></h1>
+          <h5><%= bags[i].title %></h5>
+          <h2>Rs - <%= bags[i].price %></h2>
+          <i class="ri-heart-3-line"></i>
+        </div>
+      <% } %>
+  </div>
+
+  <div class="aboutpage1">
+    <div class="apleft">
+      <div class="up"></div>
+      <div class="down">
+      <div class="page5">
+        <!-- <h2>OUR WORK</h2> -->
+        <div class="slider">
+          <div class="slide">
+                <img src="/images/slider2-custom-rugs.jpg" alt="Photo1"/>
+            </div>
+          <div class="slide">
+                <img src="/images/slider5.jpg" alt="Photo3"/>
+            </div> 
+          <div class="slide">
+                <img src="/images/slider6.jpg" alt="Photo2"/>
+            </div>
+          <div class="slide">
+                <img src="/images/slider4man.jpeg" alt="Photo3"/>
+            </div> 
+      
+            <button class="btn-slide prev"><i class="fas fa-3x fa-chevron-circle-left"></i></button>
+            <button class="btn-slide next"><i class="fas fa-3x fa-chevron-circle-right"></i></button>
+          
+        </div>
+        <div class="dots-container">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+          <span class="dot" data-slide="3"></span>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="apright">
+      <div class="rtop">
+        <h3>IDEAS AND ADVICE</h3>
+        <p>Check out our latest how to's + design tips to find the perfect rug for your space.</p>
+      </div>
+      <div class="rmid">  </div>
+      <div class="rbottom">   </div>
+    </div>
+  </div>
+
+  <%- include('footer.ejs') -%>
+  
+
+
+    
+  <script src="https://cdn.jsdelivr.net/npm/kursor@0.1.6/dist/kursor.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./javascripts/script.js"></script>
+</body>
+
+</html>
